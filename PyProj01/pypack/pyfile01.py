@@ -1,3 +1,4 @@
+from pypack.Animal import Animal
 
 __author__ = 'igord'
 
@@ -32,6 +33,9 @@ def main():
 
     print([fruit[0], fruit[1]])
     print([fruit[0], fruit[1]], sep="$")
+
+    animal1 = Animal(30)
+    print(animal1)
 
     nl()
     print("End")

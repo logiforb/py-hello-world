@@ -7,5 +7,8 @@ class Animal(object):
         print("Init self")
         self.age = age
 
+    def __str__(self):
+        return "Animal! Age: " + str(self.age)
+
     def double_age(self):
         self.age *= 2

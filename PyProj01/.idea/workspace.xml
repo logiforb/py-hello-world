@@ -26,16 +26,7 @@
       <file leaf-file-name="pyfile01.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pypack/pyfile01.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="40" selection-start="612" selection-end="612" vertical-scroll-proportion="0.743833" vertical-offset="103" max-vertical-offset="675">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Animal.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pypack/Animal.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="21" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="240">
+            <state line="37" column="18" selection-start="690" selection-end="690" vertical-scroll-proportion="0.65844405" vertical-offset="208" max-vertical-offset="735">
               <folding />
             </state>
           </provider>
@@ -53,6 +44,7 @@
       <list>
         <option value="$PROJECT_DIR$/pypack/Animal.py" />
         <option value="$PROJECT_DIR$/pypack/pyfile01.py" />
+        <option value="$PROJECT_DIR$/pypack/randtest.py" />
       </list>
     </option>
   </component>
@@ -97,6 +89,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PyProj01" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PyProj01" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pypack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -114,7 +120,7 @@
       <console-settings />
     </option>
   </component>
-  <component name="RunManager" selected="Python.pyfile01">
+  <component name="RunManager" selected="Python.randtest">
     <configuration default="false" name="pyfile01" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -128,6 +134,24 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="PyProj01" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pypack/pyfile01.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="randtest" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pypack" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="PyProj01" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pypack/randtest.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
@@ -254,12 +278,14 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Python.pyfile01" />
+      <item index="1" class="java.lang.String" itemvalue="Python.randtest" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.pyfile01" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python.randtest" />
+        <item index="1" class="java.lang.String" itemvalue="Python.pyfile01" />
       </list>
     </recent_temporary>
   </component>
@@ -371,14 +397,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pypack/Animal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="21" selection-start="173" selection-end="173" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+        <state line="10" column="46" selection-start="195" selection-end="195" vertical-scroll-proportion="0.28462997" vertical-offset="0" max-vertical-offset="527">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pypack/randtest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="20" selection-start="243" selection-end="243" vertical-scroll-proportion="0.34155598" vertical-offset="0" max-vertical-offset="527">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pypack/pyfile01.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="40" selection-start="612" selection-end="612" vertical-scroll-proportion="0.743833" vertical-offset="103" max-vertical-offset="675">
+        <state line="37" column="18" selection-start="690" selection-end="690" vertical-scroll-proportion="0.65844405" vertical-offset="208" max-vertical-offset="735">
           <folding />
         </state>
       </provider>
