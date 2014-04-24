@@ -1,7 +1,9 @@
-from pypack.Animal import Animal
 
 __author__ = 'igord'
 
+
+def nl():
+    print("\n")
 
 def main():
     # print("Hello2")
@@ -15,7 +17,23 @@ def main():
     msg2 = msg.replace("a", "$")
     print(msg)
     print(msg2)
+    ivana = "ivana"
+    print(ivana * 2)
 
+    # print(sys.api_version)
+
+    fruit = ["banana", "apple", "legit"]
+    for i in range(len(fruit)):
+        # pass
+        # sys.stdout.write("test")
+        # print("test", end="")
+        print(fruit[i], end="")
+    nl()
+
+    print([fruit[0], fruit[1]])
+    print([fruit[0], fruit[1]], sep="$")
+
+    nl()
     print("End")
 
 main()
