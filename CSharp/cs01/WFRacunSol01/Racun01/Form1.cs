@@ -16,5 +16,25 @@ namespace Racun01
         {
             InitializeComponent();
         }
+
+        #region Menu and Tool items
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CloseThis();
+        }
+
+        private void toolStripButtonClose_Click(object sender, EventArgs e)
+        {
+            CloseThis();
+        } 
+        #endregion
+
+        #region Implementations
+        private void CloseThis()
+        {
+            this.Close();
+        } 
+        #endregion
+        
     }
 }

@@ -1,9 +1,0 @@
-E:\Development\dev01\GitHub\gh01\py-hello-world\CSharp\cs01\WFRacunSol01\Racun01\bin\Debug\Racun01.exe.config
-E:\Development\dev01\GitHub\gh01\py-hello-world\CSharp\cs01\WFRacunSol01\Racun01\bin\Debug\Racun01.exe
-E:\Development\dev01\GitHub\gh01\py-hello-world\CSharp\cs01\WFRacunSol01\Racun01\bin\Debug\Racun01.pdb
-E:\Development\dev01\GitHub\gh01\py-hello-world\CSharp\cs01\WFRacunSol01\Racun01\obj\Debug\Racun01.csprojResolveAssemblyReference.cache
-E:\Development\dev01\GitHub\gh01\py-hello-world\CSharp\cs01\WFRacunSol01\Racun01\obj\Debug\Racun01.FormMain.resources
-E:\Development\dev01\GitHub\gh01\py-hello-world\CSharp\cs01\WFRacunSol01\Racun01\obj\Debug\Racun01.Properties.Resources.resources
-E:\Development\dev01\GitHub\gh01\py-hello-world\CSharp\cs01\WFRacunSol01\Racun01\obj\Debug\Racun01.csproj.GenerateResource.Cache
-E:\Development\dev01\GitHub\gh01\py-hello-world\CSharp\cs01\WFRacunSol01\Racun01\obj\Debug\Racun01.exe
-E:\Development\dev01\GitHub\gh01\py-hello-world\CSharp\cs01\WFRacunSol01\Racun01\obj\Debug\Racun01.pdb
