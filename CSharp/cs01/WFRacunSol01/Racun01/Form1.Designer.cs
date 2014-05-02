@@ -47,7 +47,7 @@
             this.fileToolStripMenuItem});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
-            this.menuStripMain.Size = new System.Drawing.Size(824, 24);
+            this.menuStripMain.Size = new System.Drawing.Size(887, 24);
             this.menuStripMain.TabIndex = 0;
             this.menuStripMain.Text = "menuStripMain";
             // 
@@ -63,13 +63,13 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(130, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -79,7 +79,7 @@
             this.toolStripButtonClose});
             this.toolStripMain.Location = new System.Drawing.Point(0, 24);
             this.toolStripMain.Name = "toolStripMain";
-            this.toolStripMain.Size = new System.Drawing.Size(824, 25);
+            this.toolStripMain.Size = new System.Drawing.Size(887, 25);
             this.toolStripMain.TabIndex = 1;
             this.toolStripMain.Text = "toolStripMain";
             // 
@@ -100,22 +100,22 @@
             this.lboxMain.ItemHeight = 30;
             this.lboxMain.Location = new System.Drawing.Point(12, 52);
             this.lboxMain.Name = "lboxMain";
-            this.lboxMain.Size = new System.Drawing.Size(315, 394);
+            this.lboxMain.Size = new System.Drawing.Size(379, 394);
             this.lboxMain.TabIndex = 2;
             // 
             // pnlMain
             // 
-            this.pnlMain.BackColor = System.Drawing.SystemColors.Info;
-            this.pnlMain.Location = new System.Drawing.Point(333, 52);
+            this.pnlMain.Location = new System.Drawing.Point(397, 52);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Size = new System.Drawing.Size(466, 394);
             this.pnlMain.TabIndex = 3;
+            this.pnlMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMain_Paint);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 467);
+            this.ClientSize = new System.Drawing.Size(887, 469);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.lboxMain);
             this.Controls.Add(this.toolStripMain);

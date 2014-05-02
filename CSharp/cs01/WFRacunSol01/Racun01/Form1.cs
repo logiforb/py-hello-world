@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Racun01.model;
 
 namespace Racun01
 {
@@ -39,45 +40,55 @@ namespace Racun01
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            //Test1();
-
             try
             {
-                string[] dataLines = File.ReadAllLines("../../data/test.txt");
-                foreach (string dataLine in dataLines)
-                {
-                    string[] dataLineSplit = dataLine.Split(',');
+                //PopulateListBoxWithInvoices();
 
-                    //foreach (string datalineSplitLine in dataLineSplit)
-                    //{
-                    //    string = datalineSplitLine.Replace("\"", "");
-                    //}
+                Graphics g = pnlMain.CreateGraphics();
+                //g.DrawString("Test", 
+                //    new Font("Arial", 12f, FontStyle.Regular), 
+                //    Brushes.Black, 
+                //    new PointF(20, 20));
 
-                    string name = FormatLine(dataLineSplit[0]);
-                    DateTime time = ParseDateTime(FormatLine(dataLineSplit[1]));
-                    int cost = int.Parse(FormatLine(dataLineSplit[2]));
-
-                    model.Invoice invoice = new model.Invoice(name, time, cost);
-                    Add(invoice.ToString());
-                }
-
-                //string line = lines[0];
-                //string[] split1 = line.Split(',');
-
-                //string unparsedDate = split1[1].Replace("\"", "");
-
-                //String format = "yyyy-MM-dd_HH-mm";
-                //DateTime dtParsed = DateTime.ParseExact(
-                //    unparsedDate,
-                //    format,
-                //    new System.Globalization.CultureInfo("hr-HR"));
-
-                //Add(dtParsed.ToString());
+                g.DrawLine(Pens.Black, new Point(20, 20), new Point(600, 120));
             }
             catch (Exception ex)
             {
                 ErrorHandler(ex.Message, "Unable to load data");
             }
+        }
+
+        private void PopulateListBoxWithInvoices()
+        {
+            List<Invoice> invoices = loadInvoices();
+
+            foreach (Invoice invoice in invoices)
+            {
+                Add(invoice.ToString());
+            }
+        }
+
+        private List<Invoice> loadInvoices()
+        {
+            List<Invoice> invoices = new List<Invoice>();
+
+            string dataDir = System.Configuration.ConfigurationManager.AppSettings["datadir"];
+            string[] dataLines = File.ReadAllLines(dataDir);
+            
+            foreach (string dataLine in dataLines)
+            {
+                string[] dataLineSplit = dataLine.Split(',');
+
+                string name = FormatLine(dataLineSplit[0]);
+                DateTime time = ParseDateTime(FormatLine(dataLineSplit[1]));
+                int cost = int.Parse(FormatLine(dataLineSplit[2]));
+
+                model.Invoice invoice = new model.Invoice(name, time, cost);
+                //Add(invoice.ToString());
+                invoices.Add(invoice);
+            }
+
+            return invoices;
         }
 
         private String FormatLine(string line)
@@ -98,45 +109,6 @@ namespace Racun01
             return dtParsed;
         }
 
-        private void Test1()
-        {
-            try
-            {
-                string[] lines = File.ReadAllLines("../../data/test.txt");
-
-                //lboxMain.Items.Add(lines[0]);
-                string line = lines[0];
-                string[] split1 = line.Split(',');
-                //foreach (var splitLine1 in split1)
-                //{
-                //    //lboxMain.Items.Add(splitLine1);
-                //    string neww = splitLine1.Replace("\"", "");
-                //    //Add(String.Format("[{0}]", neww));
-                //    if (neww == "")
-                //    {
-
-                //    }
-                //}
-
-                string unparsedDate = split1[1].Replace("\"", "");
-                Add(unparsedDate);
-                //DateTime dt1 = DateTime.Parse(unparsedDate.Replace("_","T"));
-                //Add(dt1.ToString());
-
-                String format = "yyyy-MM-dd_HH-mm";
-                DateTime dtParsed = DateTime.ParseExact(
-                    unparsedDate,
-                    format,
-                    new System.Globalization.CultureInfo("hr-HR"));
-
-                Add(dtParsed.ToString());
-            }
-            catch (Exception ex)
-            {
-                ErrorHandler(ex.Message, "Unable to load data");
-            }
-        }
-
         private void Add(string add)
         {
             lboxMain.Items.Add(add);
@@ -145,6 +117,13 @@ namespace Racun01
         private void ErrorHandler(string text, string caption)
         {
             MessageBox.Show(text, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void pnlMain_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+
+            g.DrawLine(Pens.Black, new Point(20, 20), new Point(600, 120));
         }
         
     }
