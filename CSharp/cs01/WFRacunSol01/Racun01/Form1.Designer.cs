@@ -47,7 +47,7 @@
             this.fileToolStripMenuItem});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
-            this.menuStripMain.Size = new System.Drawing.Size(887, 24);
+            this.menuStripMain.Size = new System.Drawing.Size(1005, 24);
             this.menuStripMain.TabIndex = 0;
             this.menuStripMain.Text = "menuStripMain";
             // 
@@ -79,7 +79,7 @@
             this.toolStripButtonClose});
             this.toolStripMain.Location = new System.Drawing.Point(0, 24);
             this.toolStripMain.Name = "toolStripMain";
-            this.toolStripMain.Size = new System.Drawing.Size(887, 25);
+            this.toolStripMain.Size = new System.Drawing.Size(1005, 25);
             this.toolStripMain.TabIndex = 1;
             this.toolStripMain.Text = "toolStripMain";
             // 
@@ -100,14 +100,14 @@
             this.lboxMain.ItemHeight = 30;
             this.lboxMain.Location = new System.Drawing.Point(12, 52);
             this.lboxMain.Name = "lboxMain";
-            this.lboxMain.Size = new System.Drawing.Size(379, 394);
+            this.lboxMain.Size = new System.Drawing.Size(379, 694);
             this.lboxMain.TabIndex = 2;
             // 
             // pnlMain
             // 
             this.pnlMain.Location = new System.Drawing.Point(397, 52);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(466, 394);
+            this.pnlMain.Size = new System.Drawing.Size(596, 713);
             this.pnlMain.TabIndex = 3;
             this.pnlMain.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMain_Paint);
             // 
@@ -115,7 +115,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 469);
+            this.ClientSize = new System.Drawing.Size(1005, 777);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.lboxMain);
             this.Controls.Add(this.toolStripMain);

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Racun01.business;
 using Racun01.model;
 
 namespace Racun01
@@ -18,6 +19,8 @@ namespace Racun01
         {
             InitializeComponent();
         }
+
+        private List<Invoice> invoices;
 
         #region Menu and Tool items
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,19 +41,14 @@ namespace Racun01
         } 
         #endregion
 
+        #region Main etc.
         private void FormMain_Load(object sender, EventArgs e)
         {
             try
             {
                 //PopulateListBoxWithInvoices();
 
-                Graphics g = pnlMain.CreateGraphics();
-                //g.DrawString("Test", 
-                //    new Font("Arial", 12f, FontStyle.Regular), 
-                //    Brushes.Black, 
-                //    new PointF(20, 20));
-
-                g.DrawLine(Pens.Black, new Point(20, 20), new Point(600, 120));
+                invoices = loadInvoices();
             }
             catch (Exception ex)
             {
@@ -61,6 +59,15 @@ namespace Racun01
         private void PopulateListBoxWithInvoices()
         {
             List<Invoice> invoices = loadInvoices();
+
+            invoices.Sort(new business.InvoiceCompareByDate());
+
+            //IEnumerable<string> strings = invoices.Select(x => x.Name);
+
+            //foreach (string s in strings)
+            //{
+            //    Add(s);
+            //}
 
             foreach (Invoice invoice in invoices)
             {
@@ -74,7 +81,7 @@ namespace Racun01
 
             string dataDir = System.Configuration.ConfigurationManager.AppSettings["datadir"];
             string[] dataLines = File.ReadAllLines(dataDir);
-            
+
             foreach (string dataLine in dataLines)
             {
                 string[] dataLineSplit = dataLine.Split(',');
@@ -84,7 +91,7 @@ namespace Racun01
                 int cost = int.Parse(FormatLine(dataLineSplit[2]));
 
                 model.Invoice invoice = new model.Invoice(name, time, cost);
-                //Add(invoice.ToString());
+
                 invoices.Add(invoice);
             }
 
@@ -98,8 +105,6 @@ namespace Racun01
 
         private DateTime ParseDateTime(string unparsedDateTime)
         {
-            //throw new NotImplementedException();
-
             String format = "yyyy-MM-dd_HH-mm";
             DateTime dtParsed = DateTime.ParseExact(
                 unparsedDateTime,
@@ -117,13 +122,84 @@ namespace Racun01
         private void ErrorHandler(string text, string caption)
         {
             MessageBox.Show(text, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
+        } 
+        #endregion
 
         private void pnlMain_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
 
-            g.DrawLine(Pens.Black, new Point(20, 20), new Point(600, 120));
+            invoices.Sort(new InvoiceCompareByDate());
+
+
+
+
+            Size size = pnlMain.Size;
+            int xYLine = 40;
+            int yYLineHigh = 40;
+            int yYLineLow = size.Height - 40;
+            Point p1YLine = new Point(xYLine, yYLineHigh);
+            Point p2YLine = new Point(xYLine, yYLineLow);
+            Brush axisBrush = Brushes.DarkBlue;
+            g.DrawLine(new Pen(axisBrush, 2), p1YLine, p2YLine);
+
+            Brush axisInfoBrush = Brushes.Maroon;
+            string fontPrototype = "Arial";
+            Font axisInfoFont = new Font(fontPrototype, 12);
+
+            g.DrawString("0", axisInfoFont, axisInfoBrush, new PointF(xYLine - 20, yYLineLow - 5));
+            for (int i = 50; i <= 500; i += 50)
+            {
+                g.DrawString(i.ToString(), axisInfoFont, axisInfoBrush, new PointF(xYLine - 45, yYLineLow - i));
+            }
+
+            Font invoiceFont = new Font(fontPrototype, 8);
+            Pen invoiceLinePen = new Pen(Brushes.LightGray, 20);
+            Invoice invoice;
+            for (int i = 0; i < invoices.Count; i++)
+            {
+                invoice = invoices[i];
+                int xInvoice = 40 + i * 40 + (int)(invoiceLinePen.Width/2);
+                int yInvoiceHigh = size.Height - 40 - Math.Min(invoice.Cost, 525);
+                int yInvoiceLow = size.Height - 40;
+                Point p1Invoice = new Point(xInvoice, yInvoiceHigh);
+                Point p2Invoice = new Point(xInvoice, yInvoiceLow);
+                g.DrawLine(invoiceLinePen, p1Invoice, p2Invoice);
+                
+            }
+            for (int i = 0; i < invoices.Count; i++)
+            {
+                invoice = invoices[i];
+                int xInvoice = 40 + i * 40;
+                int yInvoiceHigh = size.Height - 40 - Math.Min(invoice.Cost, 525);
+                DrawInvoiceString(g, axisInfoBrush, invoiceFont, invoice, xInvoice, yInvoiceHigh);
+            }
+
+
+
+
+
+            //Invoice invoice;
+
+            //for (int i = 0; i < invoices.Count; i++)
+            //{
+            //    //g.DrawRectangle(new Pen(Brushes.DarkBlue, 14), new Rectangle(20, 20, 20, 80));
+            //    //g.DrawLine(new Pen(Brushes.DarkBlue, 14), 20 * i + 20, 20, 20 * i + 20, 80);
+
+            //    invoice = invoices[i];
+            //    Size size = pnlMain.Size;
+            //    int x = 20 + 20 * i;
+            //    int y = size.Height - 20;
+            //    int y2 = size.Height - invoice.Cost + 20;
+            //    Point p1 = new Point(x, y2);
+            //    Point p2 = new Point(x, y);
+            //    g.DrawLine(new Pen(Brushes.DarkBlue, 20), p1, p2);
+            //}
+        }
+
+        private static void DrawInvoiceString(Graphics g, Brush axisInfoBrush, Font invoiceFont, Invoice invoice, int xInvoice, int yInvoiceHigh)
+        {
+            g.DrawString(invoice.Name, invoiceFont, axisInfoBrush, new PointF(xInvoice, yInvoiceHigh));
         }
         
     }
