@@ -28,6 +28,10 @@
                 <form:input path="age" id="ageInput" />
                 <form:errors path="age" cssClass="error" />
                 <br/>
+                <label for="nameInput">Name: </label>
+                <form:input path="name" id="nameInput" />
+                <form:errors path="name" cssClass="error" />
+                <br/>
                 <input type="submit" value="Submit" />
             </form:form>
         </div>

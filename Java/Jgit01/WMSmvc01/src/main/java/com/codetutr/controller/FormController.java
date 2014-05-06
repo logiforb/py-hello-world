@@ -24,20 +24,10 @@ public class FormController {
     @RequestMapping(value = "/hello", method = RequestMethod.POST)
     public String helloPost(@ModelAttribute("animal") @Valid Animal animal, BindingResult bindingResult) {
 
-//            Animal animal = new Animal(33);
-//            model.addAttribute("animal", animal);
         if (bindingResult.hasErrors()) {
             
             return returnFormMain();
-            
-//            System.out.println("----------------");
-//            System.out.println("Binding Result HAS ERRORS");
-//            System.out.println("----------------");
         }
-
-//        System.out.println("----------------");
-//        System.out.println("Binding Result has no errors");
-//        System.out.println("----------------");
 
         return "formmainresult";
     }

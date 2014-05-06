@@ -10,5 +10,6 @@
         <jsp:useBean id="animal" scope="request" class="com.codetutr.model.Animal" />
         <h1>Result</h1>
         <h2>age: ${animal.age}</h2>
+        <h2>name: ${animal.name}</h2>
     </body>
 </html>
