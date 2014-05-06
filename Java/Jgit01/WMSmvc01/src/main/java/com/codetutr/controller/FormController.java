@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class FormController {
 	
 
-	@RequestMapping(value="/", method=RequestMethod.GET)
+	@RequestMapping(value="/hello", method=RequestMethod.GET)
 	public String hello() {
-		return "index";
+		return "formmain";
 	}
 }
