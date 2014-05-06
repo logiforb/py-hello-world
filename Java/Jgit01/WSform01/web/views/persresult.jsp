@@ -1,13 +1,15 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Redirecting to index page</title>
+        <title>Pers Result</title>
     </head>
     <body>
-        <h1>Redirecting to index page</h1>
-        <c:redirect url="/pers" />
+        <jsp:useBean id="pers" scope="request" class="models.Person" />
+        <h1>Result</h1>
+        <h2>Age: ${pers.age}</h2>
+        <h2>Name: ${pers.name}</h2>
     </body>
 </html>
