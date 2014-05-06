@@ -131,9 +131,6 @@ namespace Racun01
 
             invoices.Sort(new InvoiceCompareByDate());
 
-
-
-
             Size size = pnlMain.Size;
             int xYLine = 40;
             int yYLineHigh = 40;
@@ -174,27 +171,6 @@ namespace Racun01
                 int yInvoiceHigh = size.Height - 40 - Math.Min(invoice.Cost, 525);
                 DrawInvoiceString(g, axisInfoBrush, invoiceFont, invoice, xInvoice, yInvoiceHigh);
             }
-
-
-
-
-
-            //Invoice invoice;
-
-            //for (int i = 0; i < invoices.Count; i++)
-            //{
-            //    //g.DrawRectangle(new Pen(Brushes.DarkBlue, 14), new Rectangle(20, 20, 20, 80));
-            //    //g.DrawLine(new Pen(Brushes.DarkBlue, 14), 20 * i + 20, 20, 20 * i + 20, 80);
-
-            //    invoice = invoices[i];
-            //    Size size = pnlMain.Size;
-            //    int x = 20 + 20 * i;
-            //    int y = size.Height - 20;
-            //    int y2 = size.Height - invoice.Cost + 20;
-            //    Point p1 = new Point(x, y2);
-            //    Point p2 = new Point(x, y);
-            //    g.DrawLine(new Pen(Brushes.DarkBlue, 20), p1, p2);
-            //}
         }
 
         private static void DrawInvoiceString(Graphics g, Brush axisInfoBrush, Font invoiceFont, Invoice invoice, int xInvoice, int yInvoiceHigh)
