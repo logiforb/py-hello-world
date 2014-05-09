@@ -67,3 +67,16 @@ SELECT user_role_id, username, role
 UPDATE users
    SET password='f44ta'
 WHERE username = 'mujo';
+
+------------------------------------------------------------------
+-- ENCRYPTED
+------------------------------------------------------------------
+SELECT username, password, enabled
+  FROM users;
+
+UPDATE users
+   SET password='$2a$13$zoQiQmcNdkw.PlVS/WsU2O4CM0V/G396YKiU6EXUErqi6TceNgb.q' --123456
+ WHERE username='mkyong';
+UPDATE users
+   SET password='$2a$13$0nQ7hp65hH6iIWUlUEWEvuY12RUewjHZD4ZoNJ2dOLHuirOCTf0Ee' --fata
+ WHERE username='mujo';
