@@ -98,3 +98,27 @@ SELECT user_role_id, username, role
 
 INSERT INTO user_roles(username, role)
 	VALUES('q', 'ROLE_USER')
+
+------------------------------------------------------------------
+-- The following stored procedures cannot be used with vanilla 
+-- jdbc-user-service, because it uses prepared statements
+-- the prepared statements, when used correctly, prevent from
+-- SQL injection
+------------------------------------------------------------------
+select username,password,enabled from users where username='q'
+
+CREATE FUNCTION users_select_by_username(_username text) RETURNS TABLE(username text, password text, enabled smallint) AS $$
+  SELECT username, password, enabled FROM users WHERE username = _username
+$$ LANGUAGE SQL;
+
+SELECT * FROM users_select_by_username('q')
+
+select username,role from user_roles where username='q'
+
+CREATE FUNCTION user_roles_select_by_username(_username text) RETURNS TABLE(username text, role text) AS $$
+  SELECT username, role FROM user_roles WHERE username = _username
+$$ LANGUAGE SQL;
+
+SELECT * FROM user_roles_select_by_username('q')
+SELECT * FROM user_roles_select_by_username('mkyong')
+------------------------------------------------------------------
