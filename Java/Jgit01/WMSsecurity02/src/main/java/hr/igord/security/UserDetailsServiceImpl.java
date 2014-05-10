@@ -24,8 +24,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         Set<GrantedAuthority> authorities3 = new HashSet<GrantedAuthority>();
         authorities3.add(authorityAdmin);
         authorities3.add(authorityGuest);
-        UserDetails q = new UserDetailsImpl("q", "$2a$14$XFS5wl8MyrCZuSbvfePigeEgo1GoljRts6ZAs9aNRxnSeWcLWHgwy", authorities3);
-        userRepository.put("q", q);
+        UserDetails qw = new UserDetailsImpl("q", "$2a$14$XFS5wl8MyrCZuSbvfePigeEgo1GoljRts6ZAs9aNRxnSeWcLWHgwy", authorities3);
+        userRepository.put("q", qw);
     }
     
     @Override

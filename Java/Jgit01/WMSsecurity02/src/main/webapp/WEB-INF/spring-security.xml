@@ -9,29 +9,17 @@
  
     <http auto-config="true" use-expressions="true">
         <intercept-url pattern="/admin**" access="hasRole('admtest')" />
+        <form-login login-page="/login" authentication-failure-url="/login?error" />
+        <logout logout-url="/logout" />
     </http>
  
-    <beans:bean id="passwordEncoder" class="hr.igord.security.PasswordEncoderImpl" />
+    <beans:bean id="passwordEncoderImpl" class="hr.igord.security.PasswordEncoderImpl" />
     <beans:bean id="userDetailsServiceImpl" class="hr.igord.security.UserDetailsServiceImpl" />
- 
-    <!-- Select users and user_roles from database -->
+    
     <authentication-manager>
         <authentication-provider user-service-ref="userDetailsServiceImpl">
-            <password-encoder ref="passwordEncoder" />
+            <password-encoder ref="passwordEncoderImpl" />
         </authentication-provider>
     </authentication-manager>
-    
-    <!-- FAIL, see the wmssecurity02sql.sql comments -->
-    <!-- {CALL ip_info_on_healthy_update(?, ?, ?, ?, ?)} -->
-    <!--<authentication-manager>
-        <authentication-provider>
-            <password-encoder ref="passwordEncoder" />
-            <jdbc-user-service data-source-ref="dataSource"
-                               users-by-username-query=
-		    "{CALL users_select_by_username(?)}"
-                               authorities-by-username-query=
-		    "{CALL user_roles_select_by_username(?)}" />
-        </authentication-provider>
-    </authentication-manager>-->
  
 </beans:beans>
