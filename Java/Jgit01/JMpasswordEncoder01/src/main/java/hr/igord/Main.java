@@ -28,15 +28,19 @@ public class Main {
 //        LOG.debug("TEST DEBUG");
         
 //        PasswordEncoder pe = new BCryptPasswordEncoder(18);
-        PasswordEncoder pe = new BCryptPasswordEncoder(16);
-        String password = "password";
-        long pre = System.nanoTime();
-        pe.encode(password);
-        long post = System.nanoTime();
-        System.out.println((post - pre) * 0.000001);
+//        PasswordEncoder pe = new BCryptPasswordEncoder(16);
+//        String password = "password";
+//        long pre = System.nanoTime();
+//        pe.encode(password);
+//        long post = System.nanoTime();
+//        System.out.println((post - pre) * 0.000001);
+//        
+//        String mkyong = "123456";
+//        System.out.println(pe.encode(mkyong));
         
-        String mkyong = "123456";
-        System.out.println(pe.encode(mkyong));
+//        PasswordEncoder pe = new BCryptPasswordEncoder(16); // too slow
+        PasswordEncoder pe = new BCryptPasswordEncoder(14);
+        System.out.println(pe.encode("w"));
     }
     
     public static void main(String[] args) {
