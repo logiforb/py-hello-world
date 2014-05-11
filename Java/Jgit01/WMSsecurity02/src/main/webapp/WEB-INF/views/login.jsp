@@ -1,27 +1,28 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="mytags" tagdir="/WEB-INF/tags/" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login Page</title>
-    </head>
-    <body>
-        <div>
-            <div style="color: red">${error}</div>
-        </div>
-        <div>
-            <form action="<c:url value='j_spring_security_check' />" method="POST">
-                <label for="j_username">Username</label>
-                <input type="text" name="j_username" value="" />
-                <br />
-                <label for="j_password">Password</label>
-                <input type="password" name="j_password" value="" />
-                <br />
-                <input type="submit" name="login" value="Login" />
-            </form>
-        </div>
-    </body>
-</html>
+<mytags:mymain 
+    mymaintitle="Login" 
+    subheadingtitle="Login"
+    mycontextpath="${pageContext.request.contextPath}">
+
+    <div>
+        <mytags:ifnotnull value="${error}">
+            <div class="alert alert-danger">${error}</div>
+        </mytags:ifnotnull>
+    </div>
+    <div class="form-group">
+        <form action="<c:url value='j_spring_security_check' />" method="POST">
+            <label for="j_username">Username</label>
+            <input type="text" name="j_username" value="" class="form-control" placeholder="Enter username" />
+            <br />
+            <label for="j_password">Password</label>
+            <input type="password" name="j_password" value="" class="form-control" placeholder="Enter password" />
+            <br />
+            <input type="submit" name="login" value="Login" class="btn btn-default" />
+        </form>
+    </div>
+
+</mytags:mymain>

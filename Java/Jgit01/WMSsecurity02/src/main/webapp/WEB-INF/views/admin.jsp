@@ -1,12 +1,8 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Q W</title>
-    </head>
-    <body>
-        <h1>q w</h1>
-    </body>
-</html>
+<%@taglib prefix="mytags" tagdir="/WEB-INF/tags/" %>
+<mytags:mymain 
+    mymaintitle="Administration" 
+    subheadingtitle="Administration" 
+    subheadingtext="This is the administration page" 
+    mycontextpath="${pageContext.request.contextPath}">
+</mytags:mymain>
