@@ -12,3 +12,10 @@ TrolloloConnectionStrings.java
 /Java/Jgit01/JSpringSource/**
 
 #
+/Java/Jgit01/JMmybatis01/target/
+/Java/Jgit01/JFXapp01/nbproject/private/
+/Java/Jgit01/JFXapp01/build/
+/Java/Jgit01/JFXapp01/dist/
+/Java/Jgit01/JFXapp02/nbproject/private/
+/Java/Jgit01/JFXapp02/dist/
+/Java/Jgit01/JFXapp02/build/

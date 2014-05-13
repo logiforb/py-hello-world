@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hr.igord.data.AnimalDataMapper">
+    <!--<select id="selectAnimalData" resultType="hr.igord.data.AnimalData">
+        SELECT name, age, last_update lastUpdate
+        FROM animal
+        WHERE animal_id = #{id}
+    </select>-->
+    <select id="selectAnimalData" resultType="hr.igord.data.AnimalData">
+        SELECT name, age, last_update lastUpdate
+        FROM animal
+    </select>
+    <select id="selectAllAnimalData" resultType="hr.igord.data.AnimalData">
+        SELECT
+        name, 
+        CASE WHEN age > 0 THEN age ELSE -1 END AS age,
+        last_update lastUpdate
+        FROM animal;
+    </select>    
+</mapper>

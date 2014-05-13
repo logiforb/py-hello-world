@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeHandlers>
+        <typeHandler handler="hr.igord.data.DateTimeTypeHandler"/>
+    </typeHandlers>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="org.postgresql.Driver"/>
+                <property name="url" value="jdbc:postgresql://localhost/d04pers"/>
+                <property name="username" value="wmssecurity01admin"/>
+                <property name="password" value="wmssecurity01password"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="data/CatDataMapper.xml"/>
+        <mapper resource="data/AnimalDataMapper.xml"/>
+    </mappers>
+</configuration>
