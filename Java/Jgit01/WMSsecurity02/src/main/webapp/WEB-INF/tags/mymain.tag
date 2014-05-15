@@ -4,6 +4,7 @@
 <%@attribute name="subheadingtext"%>
 <%@attribute name="mycontextpath" required="true"%>
 <%@taglib prefix="mytags" tagdir="/WEB-INF/tags/" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,7 +40,13 @@
         <ul class="nav nav-pills pull-right">
           <li><a href="${mycontextpath}/">Home</a></li>
           <li><a href="${mycontextpath}/admin">Administration</a></li>
-          <li><a href="${mycontextpath}/logout">Logout</a></li>
+          <security:authorize access="isAnonymous()">
+          <li class="active"><a href="${mycontextpath}/login">Login</a></li>
+          </security:authorize>
+          <security:authorize access="isAuthenticated()">
+          <security:authentication property="principal" var="principal" scope="request" />
+          <li class="active"><a href="${mycontextpath}/logout">Logout (${principal.username})</a></li>
+          </security:authorize>
         </ul>
         <h3 class="text-muted">Project name</h3>
       </div>

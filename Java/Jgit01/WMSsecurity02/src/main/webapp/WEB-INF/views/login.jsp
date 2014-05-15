@@ -16,10 +16,10 @@
     <div class="form-group">
         <form action="<c:url value='j_spring_security_check' />" method="POST">
             <label for="j_username">Username</label>
-            <input type="text" name="j_username" value="" class="form-control" placeholder="Enter username" />
+            <input type="text" name="j_username" class="form-control" placeholder="Enter username" />
             <br />
             <label for="j_password">Password</label>
-            <input type="password" name="j_password" value="" class="form-control" placeholder="Enter password" />
+            <input type="password" name="j_password" class="form-control" placeholder="Enter password" />
             <br />
             <input type="submit" name="login" value="Login" class="btn btn-default" />
         </form>
